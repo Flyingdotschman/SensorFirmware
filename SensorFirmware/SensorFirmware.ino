@@ -324,27 +324,11 @@ void loop() {
 
 // ********************* FUNCTIONS ************************ FUNCTIONS **********************************************
 uint16_t calibrate(int pin) {
-
-  // digitalWrite(pinPersOut, HIGH);
-  //digitalWrite(pinPersIn, HIGH);
   long temp = 0;
   for (uint16_t i = 0; i < 50; i++) {
     delay(17);
     temp = temp + analogRead(pin);
   }
-
-
-  // Serial.println("Calibration:");
-  //Serial.println("**");
-  // Serial.println(temp / 50);
-  /*   String outp = "CalibrationValue:  " + String(temp/100);
-    Serial.println(outp);
-
-  */
-
-  // digitalWrite(pinPersOut, LOW);
-  // digitalWrite(pinPersIn, LOW);
-
   return ((temp / 50));
 }
 
@@ -357,13 +341,7 @@ void personIN() {
 
   digitalWrite(pinPersInData, LOW);
   //Serial1.println("IN");
-  /*
-    if (sensor_rf != DETECT_ACTIV) {
-      cal_rf = calibrate(rightforward);
-    }
-    if (sensor_rb != DETECT_ACTIV) {
-      cal_rb = calibrate(rightbackward);
-    }*/
+ 
 }
 
 
@@ -376,14 +354,6 @@ void personOUT() {
 
   digitalWrite(pinPersOutData, LOW);
 
-  //Serial1.println("OUT");
-  /*
-    if (sensor_rf != DETECT_ACTIV) {
-      cal_rf = calibrate(rightforward);
-    }
-    if (sensor_rb != DETECT_ACTIV) {
-      cal_rb = calibrate(rightbackward);
-    }*/
 }
 
 void resetStateLeft() {
